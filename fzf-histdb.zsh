@@ -70,7 +70,7 @@ histdb-fzf-query(){
                      case when $mst > $yst then
                        '${date_format}'
                      else
-                       '${date_format}/%Y'
+                       '%Y-${date_format}'
                      end)
                    end,
                    max_start,
@@ -148,7 +148,7 @@ histdb-detail(){
 
   local query="
     select
-      strftime('${date_format}/%Y %H:%M', max_start, 'unixepoch', 'localtime') as time,
+      strftime('%Y-${date_format} %H:%M', max_start, 'unixepoch', 'localtime') as time,
       ifnull(exit_status, 'NONE') as exit_status,
       ifnull(secs, '-----') as secs,
       ifnull(host, '<somewhere>') as host,
