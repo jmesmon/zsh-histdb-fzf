@@ -23,11 +23,12 @@ get_date_format() (
         fi
     fi
 
-    if [[ "${date_format}" == "us" ]]; then
-        echo "%m/%d"
-    else
-        echo "%d/%m"
-    fi
+    #if [[ "${date_format}" == "us" ]]; then
+    #    echo "%m/%d"
+    #else
+    #    echo "%d/%m"
+    #fi
+    echo "%m-%d"
 )
 
 # variables for substitution in log
